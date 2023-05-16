@@ -11,13 +11,12 @@ file(GLOB SRCS
 add_executable(${PROJECT_NAME} ${SRCS})
 
 # bvh
-target_include_directories(${PROJECT_NAME} PRIVATE "${BVH_INCLUDE_DIRS}")
+target_link_libraries(${PROJECT_NAME} nbvh)
 
 # glm
-target_include_directories(${PROJECT_NAME} PRIVATE "${GLM_INCLUDE_DIRS}")
+target_link_libraries(${PROJECT_NAME} glm)
 
 # glfw
-target_include_directories(${PROJECT_NAME} PRIVATE "${GLFW_INCLUDE_DIRS}")
 target_link_libraries(${PROJECT_NAME} glfw)
 add_dependencies(${PROJECT_NAME} glfw)
 

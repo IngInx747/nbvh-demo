@@ -11,7 +11,7 @@ file(GLOB SRCS
 add_executable(${PROJECT_NAME} ${SRCS})
 
 # bvh
-target_include_directories(${PROJECT_NAME} PRIVATE "${BVH_INCLUDE_DIRS}")
+target_link_libraries(${PROJECT_NAME} PRIVATE nbvh)
 
 # stb
-target_include_directories(${PROJECT_NAME} PRIVATE "${STB_INCLUDE_DIRS}")
+target_link_libraries(${PROJECT_NAME} PRIVATE stb)

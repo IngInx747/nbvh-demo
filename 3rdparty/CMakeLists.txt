@@ -7,13 +7,11 @@ set(GLFW_INSTALL "Generate installation target" OFF)
 add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/glfw")
 
 # bvh
-set(BVH_INCLUDE_DIRS "${CMAKE_CURRENT_LIST_DIR}/nbvh" CACHE INTERNAL "bvh include path")
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/nbvh")
 
 # glm
-set(GLM_INCLUDE_DIRS "${CMAKE_CURRENT_LIST_DIR}/glm/glm" CACHE INTERNAL "glm include path")
-
-# glfw
-set(GLFW_INCLUDE_DIRS "${CMAKE_CURRENT_LIST_DIR}/glfw/include" CACHE INTERNAL "glfw include path")
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/glm")
 
 # stb
-set(STB_INCLUDE_DIRS "${CMAKE_CURRENT_LIST_DIR}/stb" CACHE INTERNAL "stb include path")
+add_library(stb INTERFACE)
+target_include_directories(stb INTERFACE "${CMAKE_CURRENT_LIST_DIR}/stb")
